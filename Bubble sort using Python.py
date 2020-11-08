@@ -1,18 +1,17 @@
-def bubbleSort(array):
+#Made a function called bubble_sort which does our work
+def bubble_sort(nums):
+    for i in range(len(nums)):
+        for j in range(len(nums)-1):
+            # We check whether the adjecent number is greater or not
+            if nums[j]>nums[j+1]:
+                nums[j], nums[j+1] = nums[j+1], nums[j]
+
+#Lets the user enter values of an array and verify by himself/herself
+array = []
+array_length = int(input(print("Enter the number of elements of array or enter the length of array")))
+for i in range(array_length):
+    value = int(input(print("Enter the value in the array")))
+    array.append(value)
     
-    # run loops two times: one for walking throught the array 
-    # and the other for comparison
-    for i in range(len(array)):
-        for j in range(0, len(array) - i - 1):
-
-            # To sort in descending order, change > to < in this line.
-            if array[j] > array[j + 1]:
-                
-                # swap if greater is at the rear position
-                (array[j], array[j + 1]) = (array[j + 1], array[j])
-
-
-data = [-2, 45, 0, 11, -9]
-bubbleSort(data)
-print('Sorted Array in Asc ending Order:')
-print(data)
+bubble_sort(array)    
+print(array)
